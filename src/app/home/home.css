@@ -1,0 +1,124 @@
+.slideshow-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* --- Background slideshow --- */
+.slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: scale(1.1);
+  transition: opacity 1.5s ease, transform 3s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(80%) saturate(110%);
+}
+
+/* --- Overlay Content --- */
+.overlay {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Push top and bottom apart */
+  color: white;
+}
+
+/* --- Top Heading --- */
+.page-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 30px;
+  text-shadow: 0 0 25px #ff9ecf, 0 0 40px #b57bff;
+  animation: glow 2s ease-in-out infinite alternate;
+  font-family: 'Dancing Script', cursive;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 15px #ffb6c1; }
+  to { text-shadow: 0 0 35px #ff69b4, 0 0 60px #d26cff; }
+}
+
+/* --- Bottom Note --- */
+.note-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.note-card {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  padding: 25px 35px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px rgba(255, 192, 203, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  animation: fadeIn 2s ease-in-out;
+  max-width: 400px;
+  text-align: center;
+}
+
+.note-card h2 {
+  font-size: 1.8rem;
+  color: #120303;
+  font-family: 'Dancing Script', cursive;
+  text-shadow: 0 0 20px #ff69b4;
+  margin-bottom: 10px;
+}
+
+.note-card p {
+  font-size: 1.3rem;
+  font-family: 'Dancing Script', cursive;
+  color: #260303;
+  text-shadow: 0 0 15px #b03060;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2rem;
+    margin-top: 20px;
+  }
+
+  .note-card {
+    width: 85%;
+    padding: 20px;
+  }
+
+  .note-card h2 {
+    font-size: 1.4rem;
+  }
+
+  .note-card p {
+    font-size: 1.1rem;
+  }
+}

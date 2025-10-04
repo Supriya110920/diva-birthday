@@ -1,0 +1,48 @@
+/* 💜 Global background for all pages */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f7c4f3, #c6a0ff, #f9b8d4);
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+  color: white;
+  overflow-x: hidden;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 💫 Center every page’s main container */
+.app-container,
+.celebration,
+.celebrate,
+.home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Dancing Script', cursive;
+}
+
+/* ✨ General glowing text */
+.glow-text, .glow, h1, h2, h3 {
+  text-shadow: 0 0 10px #ffe0ff, 0 0 20px #ffb3ff;
+}
+/* You can add global styles to this file, and also import other style files */
+/* 🌀 Soft fade-in for all route transitions */
+:host {
+  animation: fadeInPage 1s ease-in;
+}
+
+@keyframes fadeInPage {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+

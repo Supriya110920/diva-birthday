@@ -1,0 +1,32 @@
+<div class="celebration-page">
+  <div *ngIf="countdown > 0" class="countdown-text">
+    <h2>There’s a surprise for you</h2>
+    <div class="countdown-number">{{ countdown }}</div>
+  </div>
+
+  <div *ngIf="countdown === 0" class="after-countdown">
+    <!-- 🎀 Curved Date Text -->
+    <div class="curved-date">
+      <svg viewBox="0 -150 500 200">
+        <defs>
+          <path id="dateCurve" d="M 50 180 A 200 200 0 0 1 450 180" fill="transparent" />
+        </defs>
+        <text width="500">
+          <textPath xlink:href="#dateCurve" startOffset="50%" text-anchor="middle">
+            It's 26th October 2025
+          </textPath>
+        </text>
+      </svg>
+    </div>
+
+    <!-- 🌸 Image Slideshow -->
+    <div class="slideshow">
+      <img [src]="images[currentImage]" alt="Diva Memories" />
+    </div>
+
+    <!-- 🌟 Happy Birthday Text -->
+    <h1 class="birthday-text">Happy Diva Day </h1>
+
+    <button class="next-btn" routerLink="/celebrate">Let's Celebrate</button>
+  </div>
+</div>

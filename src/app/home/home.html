@@ -1,0 +1,27 @@
+<div class="slideshow-wrapper">
+
+  <!-- Background slideshow -->
+  <div class="slideshow">
+    <div
+      class="slide"
+      *ngFor="let img of images; let i = index"
+      [class.active]="i === currentIndex"
+    >
+      <img [src]="img" alt="Our memories" />
+    </div>
+  </div>
+
+  <!-- Overlay Content -->
+  <div class="overlay">
+    <!-- Top heading -->
+    <h1 class="page-title">Us</h1>
+
+    <!-- Bottom Note -->
+    <div class="note-container">
+      <div class="note-card">
+        <h2>Thank you for being there always</h2>
+        <p>Love you forever</p>
+      </div>
+    </div>
+  </div>
+</div>

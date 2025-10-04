@@ -1,0 +1,76 @@
+.celebrate {
+  text-align: center;
+  color: white;
+  animation: fadeIn 1s ease;
+}
+.dance-text {
+  animation: dance 1s infinite alternate;
+  text-shadow: 0 0 15px #ffbfff;
+}
+@keyframes dance {
+  from { transform: rotate(-2deg); }
+  to { transform: rotate(2deg); }
+}
+.cake {
+  margin: 40px auto;
+  position: relative;
+  width: 180px;
+  height: 150px;
+}
+/* 🍰 Cake layers in deep maroon gradient */
+.layer {
+  width: 180px;
+  height: 40px;
+  background: linear-gradient(45deg, #800000, #b03060, #ff6f91);
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Middle and top layers keep the same alignment */
+.layer.middle {
+  bottom: 40px;
+  width: 150px;
+  left: 15px;
+}
+
+.layer.top {
+  bottom: 80px;
+  width: 120px;
+  left: 30px;
+  background: linear-gradient(45deg, #a00034, #c94b7b, #ff8fb5);
+}
+
+/* ✨ Candle glow effect */
+.candle {
+  width: 10px;
+  height: 40px;
+  background: #ffd1dc;
+  position: absolute;
+  top: -20px;
+  left: 85px;
+  border-radius: 5px;
+  box-shadow: 0 -10px 25px 8px #ffe066;
+  animation: flicker 0.3s infinite alternate;
+}
+
+@keyframes flicker {
+  from { box-shadow: 0 -10px 20px 5px #ffea00; }
+  to { box-shadow: 0 -10px 30px 10px #ffd700; }
+}
+
+button {
+  background: #9f3a9f;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+button:hover {
+  background: #e0a0ff;
+  transform: scale(1.05);
+}
