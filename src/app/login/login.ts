@@ -13,8 +13,8 @@ import { FormsModule } from '@angular/forms';
 export class LoginComponent {
   id = '';
   password = '';
-  private readonly STATIC_ID = 'diva';
-  private readonly STATIC_PASSWORD = 'love26';
+  private readonly STATIC_ID = 'divapayal';
+  private readonly STATIC_PASSWORD = 'iamadiva';
 
   constructor(private router: Router) {}
 

@@ -8,11 +8,16 @@
   padding: 30px 25px;
   width: 80%;
   max-width: 420px;
+  max-height: 80vh; /* 👈 Limit height to fit screen */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   text-align: center;
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(8px);
   font-family: "Poppins", sans-serif;
 }
+
 .note h2 {
   color: #fff;
   font-size: 1.8rem;
@@ -20,29 +25,51 @@
   text-shadow: 0 0 10px #e3a8ff;
 }
 
+/* Wrap p tags in a scrollable container */
 .note p {
   color: #fff;
   font-size: 1.1rem;
   line-height: 1.6;
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
   margin-bottom: 10px;
+  overflow-y: auto; /* 👈 enable vertical scroll */
+  max-height: 55vh; /* 👈 make sure it fits within note */
+  padding-right: 8px; /* small space for scrollbar */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #ffb6c1 transparent;
 }
 
-/* Optional glowing "I Love You" at the end */
+/* Chrome, Edge, Safari custom scrollbar */
+.note p::-webkit-scrollbar {
+  width: 6px;
+}
+
+.note p::-webkit-scrollbar-thumb {
+  background-color: #ffb6c1;
+  border-radius: 10px;
+}
+
+.note p::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
 .note .love {
   color: #d81549;
   font-size: 2rem;
+  padding: 10px 10px;
   font-weight: bold;
-  text-shadow: 0 0 15px #370e29, 0 0 30px #420f42;
-  animation: glowLove 2s ease-in-out infinite alternate;
+  font-family: "Poppins", sans-serif;
+  animation: floatCurve 1s ease-in-out infinite alternate;
 }
 
-@keyframes glowLove {
-  0% { text-shadow: 0 0 25px #f99cca, 0 0 50px #ff66ff; }
-  100% { text-shadow: 0 0 45px #bd469f, 0 0 90px #a01366; }
+@keyframes floatCurve {
+  0% { transform: translateY(0) rotate(-2deg); }
+  100% { transform: translateY(0px) rotate(2deg); }
 }
+
 .home-btn {
-  margin-top: 25px;
+  margin-top: 15px;
   padding: 10px 25px;
   font-size: 1.1rem;
   color: white;
@@ -58,6 +85,3 @@
   transform: scale(1.1);
   box-shadow: 0 0 25px #ff99cc;
 }
-
-
-

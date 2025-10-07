@@ -1,23 +1,59 @@
+/* 🌸 Background Setup */
+.celebrate-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Low opacity background image */
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/images/bgb.jpg') no-repeat center center/cover;
+  opacity: 0.5; /* soft faded background */
+  z-index: 0;
+  filter: brightness(0.8);
+}
+
+/* Celebration main content */
 .celebrate {
+  position: relative;
+  z-index: 2;
   text-align: center;
   color: white;
   animation: fadeIn 1s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+
+/* Animated Dancing Text */
 .dance-text {
   animation: dance 1s infinite alternate;
   text-shadow: 0 0 15px #ffbfff;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
+
 @keyframes dance {
   from { transform: rotate(-2deg); }
   to { transform: rotate(2deg); }
 }
+
+/* 🍰 Cake Section */
 .cake {
   margin: 40px auto;
   position: relative;
   width: 180px;
   height: 150px;
 }
-/* 🍰 Cake layers in deep maroon gradient */
+
+/* Cake Layers */
 .layer {
   width: 180px;
   height: 40px;
@@ -28,7 +64,6 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Middle and top layers keep the same alignment */
 .layer.middle {
   bottom: 40px;
   width: 150px;
@@ -42,14 +77,14 @@
   background: linear-gradient(45deg, #a00034, #c94b7b, #ff8fb5);
 }
 
-/* ✨ Candle glow effect */
+/* ✨ Candle Glow */
 .candle {
   width: 10px;
   height: 40px;
   background: #ffd1dc;
   position: absolute;
-  top: -20px;
-  left: 85px;
+  top: -25px;
+  left: 65px;
   border-radius: 5px;
   box-shadow: 0 -10px 25px 8px #ffe066;
   animation: flicker 0.3s infinite alternate;
@@ -60,6 +95,31 @@
   to { box-shadow: 0 -10px 30px 10px #ffd700; }
 }
 
+/* 🎈 Balloons (Optional, keep if already used) */
+.balloons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.balloon {
+  width: 50px;
+  height: 70px;
+  border-radius: 50%;
+  animation: float 3s ease-in-out infinite;
+}
+
+.balloon.pink { background: #ffb6c1; }
+.balloon.purple { background: #b57bff; }
+.balloon.lavender { background: #e6e6fa; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* 🎁 Button Styling */
 button {
   background: #9f3a9f;
   color: white;
@@ -69,8 +129,43 @@ button {
   cursor: pointer;
   font-weight: bold;
   transition: all 0.3s;
+  margin-top: 30px;
+  box-shadow: 0 0 15px rgba(255, 192, 255, 0.5);
 }
+
 button:hover {
   background: #e0a0ff;
   transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 192, 255, 0.8);
+}
+
+/* ✨ Fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* 📱 Responsive Adjustments */
+@media (max-width: 768px) {
+  .dance-text {
+    font-size: 1.8rem;
+  }
+  .cake {
+    width: 140px;
+    height: 120px;
+  }
+  .layer {
+    width: 140px;
+    height: 35px;
+  }
+  .layer.middle {
+    bottom: 35px;
+    width: 115px;
+    left: 12px;
+  }
+  .layer.top {
+    bottom: 70px;
+    width: 95px;
+    left: 22px;
+  }
 }
